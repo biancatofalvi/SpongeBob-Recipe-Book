@@ -1,7 +1,5 @@
-# SpongeBob-Recipe-Book
-
 <p align="center">
-  <h1 align="center">SpongeBob Recipe Book☁️</h1>
+  <h1 align="center">SpongeBob Recipe Book 🧽</h1>
   <p align="center">
      A secure backend API for SpongeBob's Recipe Book
   </p>
@@ -64,8 +62,6 @@ See routes on POSTMAN Thuder Client (VSCode extention)
 Created by Bianca T.
 
 Credits to:
-<ul>
-  <li> SpongeBob SquarePants</li>
-</ul>
+SpongeBob SquarePants
 
 </details>
