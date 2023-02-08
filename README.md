@@ -47,7 +47,7 @@ npm run start-dev
 
 Click on local URL
 
-See routes on POSTMAN Thuder Client (VSCode extention)
+See routes via POSTMAN or Thuder Client (VSCode extention)
 
 
 </details>
