@@ -34,28 +34,6 @@ app.get('/users', async (req, res, next) => {
   }
 });
 
-//Add recipes
-app.post('/create/recipe', async (req, res) => {
-  try {
-    const recipe = await Recipe.create(req.body);
-    res.status(200).send(recipe);
-  } catch (error) {
-    console.error(error);
-  }
-});
-
-
-//Add users
-
-//Delete recipes
-
-//Delete users
-
-//Edit recipes
-
-//Edit users
-
-
 // error handling middleware
 app.use((error, req, res, next) => {
   console.error('SERVER ERROR: ', error);
