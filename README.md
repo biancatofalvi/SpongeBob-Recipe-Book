@@ -1,13 +1,14 @@
 <p align="center">
-  <h1 align="center">SpongeBob Recipe Book 🧽</h1>
+  <h1 align="center">SpongeBob Recipe Book 🌈🙌🌈</h1>
   <p align="center">
      A secure backend API for SpongeBob's Recipe Book
   </p>
 </p>
 
-## 🚀 About
+## 🏪🦀🍔🍟 About
 
-<p> The secret recipes of Bikini Bottom securely stored away from Sheldon J. Plankton.  </p>
+<p> The secret recipes of Bikini Bottom, securely stored away from Sheldon J. Plankton.  </p>
+
 <p> App created with node, express and sequelize. </p>
 <p> App can also be found at https://spongebob-recipe-book-eln0.onrender.com. </p>
 
@@ -60,9 +61,9 @@ See routes via POSTMAN or Thuder Client (VSCode extention)
 
 </h2></summary>
 
-Created by Bianca T.
-
 Credits to:
-SpongeBob SquarePants
+SpongeBob SquarePants 👀🧽
+
+Created by Bianca T. 👩🏼‍🍳
 
 </details>
