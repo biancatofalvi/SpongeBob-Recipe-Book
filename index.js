@@ -124,6 +124,36 @@ app.delete('/users/:id', async (req, res, next) => {
   }
 });
 
+//Edit recipe
+app.put('/recipes/:id', async (req, res, next) => {
+  try {
+    const recipe = await Recipe.findOne({
+      where: {id: req.params.id}
+    });
+    const update = await recipe.update(req.body);
+    const updatedRecipe = await recipe.save();
+    res.send(updatedRecipe);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
+//Edit user
+app.put('/users/:id', async (req, res, next) => {
+  try {
+    const user = await User.findOne({
+      where: {id: req.params.id}
+    });
+    const update = await user.update(req.body);
+    const updatedUser = await user.save();
+    res.send(updatedUser);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
 // error handling middleware
 app.use((error, req, res, next) => {
   console.error('SERVER ERROR: ', error);
