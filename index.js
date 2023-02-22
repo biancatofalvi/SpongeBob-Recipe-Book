@@ -4,13 +4,43 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const { PORT = 3000 } = process.env;
+const {auth} = require("express-openid-connect")
 const { User, Recipe } = require('./db');
+
+const {SECRET, BASE_URL, CLIENT_ID, ISSUER_BASE_URL} = process.env;
+
+//AuthO
+const config = {
+  authRequired: true,
+  auth0Logout: true,
+  secret: SECRET,
+  baseURL: BASE_URL,
+  clientID: CLIENT_ID,
+  issuerBaseURL: ISSUER_BASE_URL
+}
 
 // middleware
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(auth(config));
+
+app.use(async (req, res, next) => {
+  const [user] = await User.findOrCreate({where: {username: req.oidc.user[username], name: req.oidc.user[name], email: req.oidc.user[email]}});
+  next();
+})
+
+app.get('/', (req, res, next) => {
+  try {
+    console.log(req.oidc.user);
+    res.send(`<h1>Spongebob's Recipes</h1><h2>Username:${req.oidc.user[nickname]}</h2><h2>${req.oidc.user[email]}</h2><img href=${req.oidc.user[picture]}></img>`)
+    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out')
+  } catch (error) {
+    console.log(error)
+    next(error);
+  }
+});
 
 //Read recipes
 app.get('/recipes', async (req, res, next) => {
@@ -78,6 +108,11 @@ app.post('/recipes/create', async (req, res, next) => {
     next(error);
   }
 });
+
+const hashPassword = async (password, SALT_COUNT) => {
+  const hash = await bcrypt.hash(password, SALT_COUNT);
+  return hash;
+}
 
 //Create user
 app.post('/users/create', async (req, res, next) => {
