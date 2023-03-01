@@ -3,31 +3,37 @@ const recipes = [
       title: "Krabby Patty",
       secretIngredient: "secretFormula",
       stars: 10,
+      email: "email1@email.com",
     },
     {
       title: "Kelp Nougat Crunch",
       secretIngredient: "kelp nougat",
       stars: 9,
+      email: "email@email.com",
     },
     {
       title: "Snail-Po for Gary",
       secretIngredient: "Love",
       stars: 10,
+      email: "email@email.com",
     },
     {
       title: "Pretty Patty",
       secretIngredient: "colour",
       stars: 9,
+      email: "email@email.com",
     },
     {
       title: "Barnacle loaf",
       secretIngredient: "meatloaf",
       stars: 7,
+      email: "email@email.com",
     },
     {
       title: "Chum Bucket",
       secretIngredient: "chum",
       stars: 1,
+      email: "email@email.com",
     }
   ];
 
