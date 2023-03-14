@@ -1,6 +1,8 @@
 require('dotenv').config('.env');
+const cors = require('cors');
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 const { PORT = 3000 } = process.env;
 const {auth} = require("express-openid-connect")
 const { User, Recipe } = require('./db');
@@ -21,6 +23,8 @@ const config = {
 }
 
 // middleware
+app.use(cors());
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(auth(config));
